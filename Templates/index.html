@@ -49,7 +49,20 @@
             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
             deserunt mollit anim id est laborum.</p>
         <h3>Open Positions</h3>
-        <p>TODO-Show Jobs here</p>
+        <div style="margin-bottom: 16px;">{% for jobs in JOB %}
+                <div>
+                   <h4 style="margin-bottom: 4px;"> {{jobs['title']}}</h4>
+                   <div>Location: {{jobs['location']}}</div>
+                    {% if 'salary' in jobs %}
+                    <div>
+                        Salary: {{jobs['salary']}}
+                    </div>
+                    {% endif %}
+                   
+
+                </div>
+            {% endfor %}
+        </div> <!-- Templating syntax is way to insert data in HTML using flask-->
         <div style="text-align: center;">
         <button>Contact Us</button>
     </div>
